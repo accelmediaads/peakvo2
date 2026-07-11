@@ -17,10 +17,14 @@ Owner: Aaron Bareither, Accel Media.
    e-commerce: half-rate production, $750/mo campaign management, 5% of tracked sales.
 
 ## Stack
-Astro 6 + Netlify. Single page (`src/pages/index.astro`, ~640 lines) with embedded CSS/JS, no
-framework. NOT yet deployed and NOT yet in git (no repo initialized). Deploy pattern when
-ready: Netlify project on the Accel Media team + `peakvo2.accelmediaads.com` CNAME
-(accelmediaads.com is on Netlify DNS, subdomains auto-provision).
+Astro 6 + Netlify. Two pages with embedded CSS/JS, no framework.
+**LIVE at https://peakvo2.accelmediaads.com** (partnership page at `/partnership/`).
+- GitHub: `accelmediaads/peakvo2` (private) → Netlify project `peakvo2-proposal`
+  (site id `462bd195-d629-4044-b3e2-72553b9232d0`, team aaronbsocials/Accel Media),
+  **auto-deploys on push to `main`** (GitHub app CI, build `npm run build`, publish `dist`).
+- DNS: NETLIFY-type record `peakvo2` auto-provisioned in the accelmediaads.com Netlify DNS
+  zone; SSL active.
+- To update: edit → commit → `git push` (Netlify rebuilds in ~1 min).
 
 ## Brand
 `src/styles/peakvo2-brand.css` — matched to peakvo2fit.com (Squarespace): steel blue accent
