@@ -1,0 +1,328 @@
+---
+import '../styles/peakvo2-brand.css';
+
+const accelLogo = '/logos/AccelLogo-Horizontal.png';
+
+const partnerPillars = [
+  {
+    t: 'Production at half rate',
+    d: 'Every partner price on the quote page. Your budget goes into the work, not agency margin.',
+  },
+  {
+    t: '$750/month campaign management',
+    d: 'I build the landing pages, set up tracking, and run Meta, YouTube, and Google myself. Ad spend stays in your accounts, in your name.',
+  },
+  {
+    t: '5% of tracked sales',
+    d: 'A sale from our campaigns, tracked click to checkout, earns me 5%. No sales, no commission.',
+  },
+];
+
+const whyStats = [
+  { n: 63, suffix: '%', cap: 'of consumers prefer short video for learning about a product' },
+  { n: 65, suffix: '%', cap: 'higher conversion for websites with video on them' },
+  { n: 85, suffix: '%', cap: 'of mobile video plays muted. Every cut ships captioned' },
+];
+
+const cases = [
+  {
+    img: '/work/hmor.jpg',
+    alt: 'Heavy Metal Off-Road bed rack system on a Toyota Tundra in the mountains',
+    tag: 'E-Commerce · California',
+    name: 'Heavy Metal Off-Road',
+    body: 'We restructured their ad account and delivered a fresh slate of video creatives. Return on ad spend climbed significantly, and Accel earns commission only on tracked sales.',
+    kicker: 'We get paid when they sell',
+  },
+  {
+    img: '/work/warhorse.jpg',
+    alt: 'Warhorse Painting crew member painting a home exterior in North Idaho',
+    tag: 'Home Services · Coeur d’Alene',
+    name: 'Warhorse Painting',
+    body: 'The full build with Oliver: website, brand film, and tracked campaigns. We booked out his entire exterior season, $65,000 of work on the books for the months ahead.',
+    kicker: '$65K booked · season full',
+  },
+  {
+    img: '/work/familyflow.jpg',
+    alt: 'Family Flow Chiropractic adjustment in their Coeur d’Alene studio',
+    tag: 'Health & Wellness · North Idaho',
+    name: 'Family Flow Chiropractic',
+    body: 'People who invest in their own health, the same buyer you want. Campaigns filled the schedule until the ads got turned off. Not paused: full.',
+    kicker: 'Ads off, schedule full',
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="How the Accel Media performance partnership works, prepared for the PeakVO₂ Analytics team." />
+    <meta name="robots" content="noindex" />
+    <meta property="og:title" content="PeakVO₂ × Accel Media | The Performance Partnership" />
+    <meta property="og:description" content="Half-rate production, tracked campaigns, and a commission that only exists when devices sell." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
+    <title>PeakVO₂ × Accel Media | The Performance Partnership</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="/" class="cobrand">
+        <span class="cobrand-client font-display">PEAKVO<sub>2</sub></span>
+        <span class="cobrand-x">×</span>
+        <img src={accelLogo} alt="Accel Media" class="cobrand-logo" />
+      </a>
+      <a href="/" class="backlink">← Back to the proposal</a>
+    </header>
+
+    <main>
+      <!-- ============ HERO-LITE ============ -->
+      <section class="hero-lite">
+        <div class="wrap reveal">
+          <p class="aw-eyebrow">The Performance Partnership</p>
+          <h1 class="lite-title">I only win when<br /><span class="hero-dim">you sell devices.</span></h1>
+          <p class="band-body lead">
+            Most agencies get paid whether the campaigns work or not. My model ties my income to your
+            results. Three components, no fine print:
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ PILLARS ============ -->
+      <section class="band tightband">
+        <div class="wrap reveal">
+          <div class="pillar-grid">
+            {partnerPillars.map((p, i) => (
+              <div class="pillar-card reveal">
+                <span class="pillar-num font-display">{String(i + 1).padStart(2, '0')}</span>
+                <h4>{p.t}</h4>
+                <p>{p.d}</p>
+              </div>
+            ))}
+          </div>
+          <p class="context-note">
+            What makes it work: a proven product (check), shared numbers, and ninety days, because campaigns
+            need time to learn. Not ready for a partnership? The standard column on the quote page stands as
+            straight project work. The door stays open.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ WHY VIDEO ============ -->
+      <section class="band alt">
+        <div class="wrap reveal">
+          <p class="aw-eyebrow">Why Lead With Video</p>
+          <h2 class="band-title">You sell measurement. Buyers need to see it.</h2>
+          <div class="stat-row">
+            {whyStats.map((s) => (
+              <div class="stat-card">
+                <div class="stat-num"><span data-count={s.n} data-suffix={s.suffix}>0</span></div>
+                <div class="stat-cap">{s.cap}</div>
+              </div>
+            ))}
+          </div>
+          <p class="context-note">Sources: Wyzowl State of Video Marketing 2026 and aggregated 2026 benchmarks.</p>
+        </div>
+      </section>
+
+      <!-- ============ PROOF ============ -->
+      <section class="band">
+        <div class="wrap reveal">
+          <p class="aw-eyebrow">Proof</p>
+          <h2 class="band-title">This playbook is already running</h2>
+          <div class="case-grid">
+            {cases.map((c) => (
+              <div class="case-card reveal">
+                <img src={c.img} alt={c.alt} loading="lazy" />
+                <div class="case-pad">
+                  <p class="case-tag">{c.tag}</p>
+                  <h3 class="case-name">{c.name}</h3>
+                  <p class="case-body">{c.body}</p>
+                  <p class="case-kicker">{c.kicker}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p class="context-note">
+            I only publish campaign numbers clients have signed off on. Ask on the call and I'll walk you
+            through the live dashboards.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ CLOSE ============ -->
+      <section class="band close">
+        <div class="wrap reveal">
+          <h2 class="close-title">Interested? It starts with the same 20 minute call.</h2>
+          <div class="cta-row">
+            <a href="tel:+12086590834" class="aw-btn-primary">Call (208) 659-0834</a>
+            <a href="mailto:aaron@accelmedia.co?subject=PeakVO2%20Partnership" class="aw-btn-secondary">Email Aaron</a>
+            <a href="/#quote" class="aw-btn-secondary">Back to the quote</a>
+          </div>
+          <div class="sign-off">
+            <p class="sign-name font-display">Aaron Bareither</p>
+            <p class="sign-org">Accel Media &nbsp;|&nbsp; (208) 659-0834</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <span class="cobrand-client font-display" style="font-size:0.9rem;">PEAKVO<sub>2</sub></span>
+        <span class="cobrand-x">×</span>
+        <img src={accelLogo} alt="Accel Media" class="cobrand-logo" />
+      </div>
+      <span>Prepared by Accel Media for PeakVO₂ Analytics. Confidential.</span>
+    </footer>
+
+    <script is:inline>
+      (function () {
+        'use strict';
+        // ---- reveal on scroll ----
+        const reveals = document.querySelectorAll('.reveal');
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        reveals.forEach((r) => io.observe(r));
+
+        // ---- count-up stats ----
+        const counters = document.querySelectorAll('[data-count]');
+        const animate = (el) => {
+          const target = parseFloat(el.getAttribute('data-count'));
+          const suffix = el.getAttribute('data-suffix') || '';
+          const dur = 1100; let start = null;
+          const tick = (ts) => {
+            if (!start) start = ts;
+            const p = Math.min((ts - start) / dur, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(eased * target) + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        };
+        const cIo = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) { animate(e.target); cIo.unobserve(e.target); }
+          });
+        }, { threshold: 0.6 });
+        counters.forEach((c) => cIo.observe(c));
+      })();
+    </script>
+
+    <style is:global>
+      html { scroll-behavior: smooth; }
+      body { margin: 0; }
+
+      sub { font-size: 0.6em; line-height: 0; }
+
+      /* ---- top bar ---- */
+      .topbar {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+        display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+        padding: 0.85rem 1.5rem;
+        background: rgba(7, 9, 13, 0.72); backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--aw-border);
+      }
+      .cobrand { display: flex; align-items: center; gap: 0.55rem; }
+      .cobrand-client { font-size: 1rem; letter-spacing: 0.14em; color: var(--aw-accent); }
+      .cobrand-x { color: var(--aw-muted); font-size: 0.8rem; }
+      .cobrand-logo { height: 18px; width: auto; display: block; opacity: 0.92; }
+      .backlink { font-size: 0.85rem; color: var(--aw-muted); font-weight: 500; transition: color var(--aw-base) var(--aw-ease); }
+      .backlink:hover { color: var(--aw-accent-light); }
+
+      /* ---- layout ---- */
+      main > section { padding: 5rem 1.5rem; }
+      .wrap { max-width: 980px; margin: 0 auto; }
+      .band.alt { background: linear-gradient(180deg, rgba(34,69,201,0.07), rgba(79,164,216,0.02)); }
+      .band.tightband { padding-top: 1rem; }
+      .band-title { font-size: clamp(1.7rem, 4.2vw, 2.7rem); margin: 0.4rem 0 1.6rem; line-height: 1.06; }
+      .band-body { font-size: 1.08rem; line-height: 1.7; color: var(--aw-foreground); opacity: 0.92; margin: 0 0 1.2rem; }
+      .band-body.lead { font-size: 1.15rem; max-width: 720px; }
+
+      /* ---- reveal ---- */
+      .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s var(--aw-ease), transform 0.6s var(--aw-ease); }
+      .reveal.in { opacity: 1; transform: none; }
+      @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+      /* ---- hero-lite ---- */
+      .hero-lite {
+        padding-top: 9rem !important; padding-bottom: 1rem !important;
+        background: radial-gradient(1100px 420px at 50% -12%, rgba(34,69,201,0.35), transparent 60%);
+      }
+      .lite-title { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.02; margin: 1rem 0 1.4rem; letter-spacing: -0.01em; }
+      .hero-dim { color: var(--aw-accent); }
+
+      /* ---- pillars ---- */
+      .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.8rem 0; align-items: stretch; }
+      .pillar-card {
+        background: var(--aw-surface); border: 1px solid var(--aw-border); border-radius: var(--aw-radius-md);
+        padding: 1.7rem 1.5rem; display: flex; flex-direction: column;
+        transition: transform var(--aw-base) var(--aw-ease), border-color var(--aw-base) var(--aw-ease);
+      }
+      .pillar-card:hover { transform: translateY(-4px); border-color: var(--aw-accent-line); }
+      .pillar-num { font-size: 1.8rem; color: var(--aw-accent); opacity: 0.55; line-height: 1; margin-bottom: 0.8rem; }
+      .pillar-card h4 { margin: 0 0 0.6rem; font-size: 1.08rem; }
+      .pillar-card p { margin: 0; color: var(--aw-muted); line-height: 1.6; font-size: 0.92rem; }
+      @media (max-width: 760px) { .pillar-grid { grid-template-columns: 1fr; } }
+
+      /* ---- stats ---- */
+      .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 0 0 2rem; }
+      .stat-card { background: var(--aw-surface); border: 1px solid var(--aw-border); border-radius: var(--aw-radius-md); padding: 1.6rem 1.3rem; }
+      .stat-num { font-family: var(--aw-font-display); font-weight: 900; font-size: 3.2rem; color: var(--aw-accent); line-height: 1; letter-spacing: 0.02em; }
+      .stat-cap { font-size: 0.85rem; color: var(--aw-muted); margin-top: 0.7rem; line-height: 1.45; }
+      @media (max-width: 680px) { .stat-row { grid-template-columns: 1fr; } }
+
+      .context-note { font-size: 0.92rem; color: var(--aw-muted); line-height: 1.65; margin: 1rem 0 0; }
+
+      /* ---- proof ---- */
+      .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 1.6rem; }
+      .case-card {
+        background: var(--aw-surface); border: 1px solid var(--aw-border); border-radius: var(--aw-radius-md);
+        overflow: hidden; display: flex; flex-direction: column;
+        transition: border-color var(--aw-base) var(--aw-ease), transform var(--aw-base) var(--aw-ease);
+      }
+      .case-card:hover { border-color: var(--aw-accent-line); transform: translateY(-3px); }
+      .case-card > img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; border-bottom: 1px solid var(--aw-border); }
+      .case-pad { padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; flex: 1; }
+      .case-tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--aw-accent); font-weight: 700; margin: 0 0 0.5rem; }
+      .case-name { font-size: 1.25rem; margin: 0 0 0.7rem; }
+      .case-body { font-size: 0.93rem; color: var(--aw-foreground); opacity: 0.88; line-height: 1.62; margin: 0 0 1.2rem; flex: 1; }
+      .case-kicker {
+        font-family: var(--aw-font-display); font-weight: 900; text-transform: uppercase;
+        font-size: 0.95rem; letter-spacing: 0.06em; color: var(--aw-accent-light);
+        border-top: 1px solid var(--aw-border); padding-top: 1rem; margin: 0;
+      }
+      @media (max-width: 860px) { .case-grid { grid-template-columns: 1fr; } }
+
+      /* ---- close ---- */
+      .band.close {
+        background: radial-gradient(900px 420px at 50% 120%, rgba(34,69,201,0.34), transparent 62%);
+        text-align: center;
+      }
+      .close-title { font-size: clamp(1.6rem, 4.2vw, 2.6rem); margin: 0.5rem auto 2rem; max-width: 720px; line-height: 1.06; }
+      .cta-row { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
+      .sign-off { margin-top: 3rem; }
+      .sign-name { font-size: 1.4rem; color: var(--aw-foreground); }
+      .sign-org { color: var(--aw-muted); font-size: 0.9rem; margin-top: 0.2rem; }
+
+      /* ---- footer ---- */
+      .site-footer {
+        display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+        padding: 2rem 1.5rem; border-top: 1px solid var(--aw-border);
+        color: var(--aw-muted); font-size: 0.78rem; max-width: 980px; margin: 0 auto;
+      }
+      .footer-brand { display: flex; align-items: center; gap: 0.5rem; }
+
+      @media (max-width: 560px) {
+        main > section { padding: 3.8rem 1.2rem; }
+        .topbar { padding: 0.75rem 1.1rem; }
+        .hero-lite { padding-top: 7rem !important; }
+      }
+    </style>
+  </body>
+</html>

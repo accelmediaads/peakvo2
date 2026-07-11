@@ -1,0 +1,117 @@
+/* ============================================================
+   PEAKVO₂ × ACCEL — proposal brand system
+   Derived from peakvo2fit.com (Squarespace theme): steel blue
+   accent hsl(203,64%,58%) on cool near-black, deep navy panels,
+   Roboto family. Same --aw-* variable contract as the Alderwood/
+   Antova scaffolds so component styles port cleanly.
+   ============================================================ */
+
+:root {
+  /* Neutrals — cool near-black, performance-dashboard feel */
+  --aw-background: #07090d;
+  --aw-surface: #0e1319;
+  --aw-surface-light: #151c25;
+  --aw-border: #232d3a;
+  --aw-foreground: #eef4f8;
+  --aw-muted: #8a97a5;
+
+  /* Brand accent — PeakVO₂ steel blue, hsl(203,64%,58%) from their site.css */
+  --aw-accent: #4fa4d8;
+  --aw-accent-light: #7cc0e8;
+  --aw-deep: #1e2952;          /* deep navy pulled from their section themes */
+  --aw-deep-dark: #101733;
+  --aw-royal: #2245c9;         /* royal blue, secondary section color */
+  --aw-accent-soft: rgba(79, 164, 216, 0.12);
+  --aw-accent-line: rgba(79, 164, 216, 0.32);
+
+  /* Semantic */
+  --aw-success: #4c9a63;
+  --aw-warning: #d6a23e;
+  --aw-danger: #e0625a;
+
+  /* Typography — PeakVO₂ runs Roboto site-wide; heavy 900 caps
+     for display, regular Roboto for body */
+  --aw-font-display: "Roboto", system-ui, -apple-system, sans-serif;
+  --aw-font-sans: "Roboto", system-ui, -apple-system, sans-serif;
+
+  /* Radius */
+  --aw-radius-sm: 4px;
+  --aw-radius-md: 8px;
+  --aw-radius-lg: 12px;
+  --aw-radius-full: 9999px;
+
+  /* Motion */
+  --aw-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --aw-fast: 160ms;
+  --aw-base: 220ms;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  background: var(--aw-background);
+  color: var(--aw-foreground);
+  font-family: var(--aw-font-sans);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body { margin: 0; }
+
+h1, h2, h3, .font-display {
+  font-family: var(--aw-font-display);
+  font-weight: 900;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+
+h4, h5, h6 { font-family: var(--aw-font-sans); font-weight: 700; }
+
+a { color: inherit; text-decoration: none; }
+
+::selection { background: var(--aw-accent); color: #071019; }
+
+/* ---- buttons ---- */
+.aw-btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.85rem 1.8rem; border-radius: var(--aw-radius-sm);
+  background: var(--aw-accent); color: #071019;
+  font-weight: 700; font-size: 0.95rem; border: none; cursor: pointer;
+  transition: background var(--aw-base) var(--aw-ease), transform var(--aw-base) var(--aw-ease);
+}
+.aw-btn-primary:hover { background: var(--aw-accent-light); transform: translateY(-1px); }
+
+.aw-btn-secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.85rem 1.8rem; border-radius: var(--aw-radius-sm);
+  background: transparent; color: var(--aw-foreground);
+  font-weight: 700; font-size: 0.95rem; cursor: pointer;
+  border: 1px solid var(--aw-border);
+  transition: border-color var(--aw-base) var(--aw-ease), color var(--aw-base) var(--aw-ease);
+}
+.aw-btn-secondary:hover { border-color: var(--aw-accent); color: var(--aw-accent-light); }
+
+/* ---- eyebrow / badge ---- */
+.aw-eyebrow {
+  font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.22em; color: var(--aw-accent); margin: 0 0 0.6rem;
+}
+
+.aw-badge {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.25rem 0.8rem; border-radius: var(--aw-radius-full);
+  background: var(--aw-accent-soft); border: 1px solid var(--aw-accent-line);
+  color: var(--aw-accent-light); font-size: 0.75rem; font-weight: 700;
+}
+
+/* ---- card ---- */
+.aw-card {
+  background: var(--aw-surface); border: 1px solid var(--aw-border);
+  border-radius: var(--aw-radius-md);
+}
+
+/* ---- scrollbar ---- */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--aw-background); }
+::-webkit-scrollbar-thumb { background: var(--aw-border); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--aw-muted); }

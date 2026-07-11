@@ -1,0 +1,508 @@
+---
+import '../styles/peakvo2-brand.css';
+
+const accelLogo = '/logos/AccelLogo-Horizontal.png';
+
+const sections = [
+  { id: 'top', label: 'Top' },
+  { id: 'note', label: 'A Note' },
+  { id: 'content', label: 'The Content' },
+  { id: 'quote', label: 'The Quote' },
+  { id: 'next', label: 'Next Steps' },
+];
+
+const deliverables = [
+  {
+    n: '01', t: 'Launch Hype Reel',
+    img: '/work/pv-strap.jpg',
+    alt: 'Athlete strapping on the PeakVO₂ Core mask in a gym',
+    d: 'A 60 to 90 second flagship film for peakvo2fit.com: athletes wearing the Core, live app data, macro shots of the hardware. Graded like a sports commercial and cut to land one feeling: this is real measurement. Includes a 30 second homepage cut.',
+    spec: 'One production day · flagship + 30s homepage cut · app screen integration · music, captions, full usage rights',
+  },
+  {
+    n: '02', t: 'Social Short Series',
+    img: '/work/pv-bike.jpg',
+    alt: 'Athlete riding a spin bike wearing the PeakVO₂ Core mask',
+    d: 'Three 15 to 30 second verticals for Reels, TikTok, and YouTube Shorts. Each opens on your strongest hook: a real athlete in the mask, real numbers climbing. Captioned for sound-off viewing.',
+    spec: 'Three 9:16 verticals · platform-native hooks · baked-in captions · same shoot day',
+  },
+];
+
+const settings = [
+  {
+    t: 'In the studio',
+    img: '/work/pv-row.jpg',
+    alt: 'Rowing assessment with a coach reading live PeakVO₂ data',
+    d: 'Cyc wall and custom lighting. Controlled, clean, product-forward: black void, rim light on the mask, numbers glowing.',
+  },
+  {
+    t: 'On location',
+    img: '/work/pv-trail.jpg',
+    alt: 'Trail runner wearing the PeakVO₂ Core on a forest trail',
+    d: 'Trailheads, open road, gym floors, mountain light. Anywhere outdoors the athletes actually train.',
+  },
+];
+
+const rates = [
+  { item: 'Launch Hype Reel', unit: '60–90s flagship + 30s homepage cut', std: '$2,500', partner: '$1,250' },
+  { item: 'Social Short Series', unit: 'three 15–30s verticals', std: '$1,500', partner: '$750' },
+  { item: 'Full Launch Package', unit: 'everything above, one shoot day', std: '$3,500', partner: '$1,750', highlight: true },
+];
+
+const steps = [
+  { d: 'A 20 minute call: studio or location, athletes, shoot date.' },
+  { d: 'One production day. Reel and shorts come from the same day.' },
+  { d: 'First cuts in two weeks, one revision round on every piece.' },
+  { d: 'Launch: reel on the homepage, shorts on social.' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Launch video production proposal prepared for the PeakVO₂ Analytics team by Aaron Bareither, Accel Media." />
+    <meta name="robots" content="noindex" />
+    <meta property="og:title" content="PeakVO₂ × Accel Media | Launch Video Production" />
+    <meta property="og:description" content="A launch hype reel and a social short series for the team measuring what wearables only estimate." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
+    <title>PeakVO₂ × Accel Media | Launch Video Production</title>
+  </head>
+  <body>
+    <div class="progress-rail" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+
+    <header class="topbar">
+      <a href="#top" class="cobrand">
+        <span class="cobrand-client font-display">PEAKVO<sub>2</sub></span>
+        <span class="cobrand-x">×</span>
+        <img src={accelLogo} alt="Accel Media" class="cobrand-logo" />
+      </a>
+      <nav class="dotnav" aria-label="Sections">
+        {sections.map((s) => (
+          <a href={`#${s.id}`} class="dot" data-dot={s.id}><span class="dot-label">{s.label}</span></a>
+        ))}
+      </nav>
+      <a href="#next" class="topcta">Let's Talk</a>
+    </header>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section id="top" class="hero">
+        <div class="hero-inner reveal">
+          <p class="aw-eyebrow">Prepared by Accel Media</p>
+          <h1 class="hero-title">Media Proposal<br /><span class="hero-dim">for PeakVO<sub>2</sub></span></h1>
+          <div class="hero-meta">
+            <span>Aaron Bareither</span><span class="sep">·</span>
+            <span>Accel Media</span><span class="sep">·</span>
+            <span>July 2026</span><span class="sep">·</span>
+            <span>Coeur d'Alene, Idaho</span>
+          </div>
+          <a href="#note" class="scrollcue" aria-label="Begin reading">
+            <span>Begin reading</span>
+            <span class="chev">↓</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ============ A NOTE ============ -->
+      <section id="note" class="band">
+        <div class="wrap narrow reveal">
+          <p class="aw-eyebrow">A Note Before the Numbers</p>
+          <article class="letter">
+            <p class="letter-greet">PeakVO<sub>2</sub> team,</p>
+            <p>Thanks for the call. This is the kind of product I love to film: real hardware, real physiology, and a story that sells itself the second someone sees live breath data next to an athlete going to the well. Wearables estimate. You measure. That contrast is the whole campaign.</p>
+            <p>Below is exactly what you asked for: the reel, the shorts, and the price.</p>
+            <p class="letter-sign">Aaron</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ THE CONTENT ============ -->
+      <section id="content" class="band alt">
+        <div class="wrap reveal">
+          <p class="aw-eyebrow">The Content</p>
+          <h2 class="band-title">One shoot day. Every launch asset.</h2>
+          <div class="show-grid">
+            {deliverables.map((s) => (
+              <div class="show-card reveal">
+                <img src={s.img} alt={s.alt} loading="lazy" />
+                <div class="show-pad">
+                  <span class="show-num font-display">{s.n}</span>
+                  <h3 class="show-title">{s.t}</h3>
+                  <p class="show-desc">{s.d}</p>
+                  <p class="show-spec">{s.spec}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div class="setting-row reveal">
+            <div class="video-vert">
+              <div class="video-frame-vert">
+                <iframe
+                  src="https://fast.wistia.net/embed/iframe/3y0nw2cqty?seo=false&videoFoam=true"
+                  title="Stallion Performance Body Workout, produced by Accel Media"
+                  allow="autoplay; fullscreen"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <p class="media-cap">Stallion Performance: a vertical from the Accel portfolio. This is the bar for your shorts.</p>
+            </div>
+            <div class="setting-col">
+              <h3 class="sub-h tight">Shot wherever it hits hardest</h3>
+              {settings.map((s) => (
+                <div class="setting-card">
+                  <img src={s.img} alt={s.alt} loading="lazy" />
+                  <div class="setting-pad">
+                    <h4>{s.t}</h4>
+                    <p>{s.d}</p>
+                  </div>
+                </div>
+              ))}
+              <p class="setting-note">Or both. We can get as creative as you want to get.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ THE QUOTE ============ -->
+      <section id="quote" class="band">
+        <div class="wrap reveal">
+          <p class="aw-eyebrow">The Quote</p>
+          <h2 class="band-title">Every number, both ways</h2>
+          <div class="rate-table" role="table" aria-label="Production rates">
+            <div class="rate-head" role="row">
+              <span role="columnheader">Deliverable</span>
+              <span role="columnheader">Standard</span>
+              <span role="columnheader" class="partner-col">Partner Rate</span>
+            </div>
+            {rates.map((r) => (
+              <div class:list={['rate-row', { highlight: r.highlight }]} role="row">
+                <span class="rate-item" role="cell">{r.item}<em>{r.unit}</em></span>
+                <span class="rate-std" role="cell">{r.std}</span>
+                <span class="rate-partner" role="cell">{r.partner}</span>
+              </div>
+            ))}
+          </div>
+          <p class="context-note">
+            Either column covers pre-production, the shoot day, edit, color, licensed music, captions, one
+            revision round per piece, and full usage rights. First cuts within two weeks. No retainers,
+            no lock-in.
+          </p>
+
+          <a href="/partnership" class="partner-banner reveal">
+            <div>
+              <p class="partner-banner-title font-display">Why is the right column half price?</p>
+              <p class="partner-banner-sub">The performance partnership: I cut production in half and get paid when you sell devices. Case studies included.</p>
+            </div>
+            <span class="partner-banner-cta">See how it works →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ============ NEXT STEPS ============ -->
+      <section id="next" class="band close">
+        <div class="wrap reveal">
+          <p class="aw-eyebrow">Next Steps</p>
+          <h2 class="close-title">The device is ready. Let's make the world want it.</h2>
+          <ol class="steps">
+            {steps.map((s, i) => (
+              <li><span>{i + 1}</span>{s.d}</li>
+            ))}
+          </ol>
+          <div class="cta-row">
+            <a href="tel:+12086590834" class="aw-btn-primary">Call (208) 659-0834</a>
+            <a href="mailto:aaron@accelmedia.co?subject=PeakVO2%20%C3%97%20Accel%20%E2%80%94%20Let%E2%80%99s%20talk" class="aw-btn-secondary">Email Aaron</a>
+          </div>
+          <div class="sign-off">
+            <p class="sign-name font-display">Aaron Bareither</p>
+            <p class="sign-org">Accel Media &nbsp;|&nbsp; (208) 659-0834</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <span class="cobrand-client font-display" style="font-size:0.9rem;">PEAKVO<sub>2</sub></span>
+        <span class="cobrand-x">×</span>
+        <img src={accelLogo} alt="Accel Media" class="cobrand-logo" />
+      </div>
+      <span>Prepared by Accel Media for PeakVO₂ Analytics. Confidential.</span>
+    </footer>
+
+    <script is:inline>
+      (function () {
+        'use strict';
+        // ---- reading progress ----
+        const fill = document.getElementById('progressFill');
+        const onScroll = () => {
+          const h = document.documentElement;
+          const max = h.scrollHeight - h.clientHeight;
+          fill.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+        };
+        document.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        // ---- reveal on scroll ----
+        const reveals = document.querySelectorAll('.reveal');
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        reveals.forEach((r) => io.observe(r));
+
+        // ---- active section dot ----
+        const dots = document.querySelectorAll('[data-dot]');
+        const secs = document.querySelectorAll('main > section[id]');
+        const setActive = (id) => dots.forEach((d) =>
+          d.classList.toggle('active', d.getAttribute('data-dot') === id));
+        const navIo = new IntersectionObserver((entries) => {
+          entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.id); });
+        }, { threshold: 0.5 });
+        secs.forEach((s) => navIo.observe(s));
+
+        // ---- smooth anchor scrolling with header offset ----
+        document.querySelectorAll('a[href^="#"]').forEach((a) => {
+          a.addEventListener('click', (e) => {
+            const id = a.getAttribute('href').slice(1);
+            const target = document.getElementById(id);
+            if (!target) return;
+            e.preventDefault();
+            const y = target.getBoundingClientRect().top + window.scrollY - 64;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          });
+        });
+      })();
+    </script>
+
+    <style is:global>
+      html { scroll-behavior: smooth; }
+      body { margin: 0; }
+
+      sub { font-size: 0.6em; line-height: 0; }
+
+      .progress-rail { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: transparent; z-index: 60; }
+      .progress-fill { height: 100%; width: 0; background: var(--aw-accent); transition: width 80ms linear; }
+
+      /* ---- top bar ---- */
+      .topbar {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+        display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+        padding: 0.85rem 1.5rem;
+        background: rgba(7, 9, 13, 0.72); backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--aw-border);
+      }
+      .cobrand { display: flex; align-items: center; gap: 0.55rem; }
+      .cobrand-client { font-size: 1rem; letter-spacing: 0.14em; color: var(--aw-accent); }
+      .cobrand-x { color: var(--aw-muted); font-size: 0.8rem; }
+      .cobrand-logo { height: 18px; width: auto; display: block; opacity: 0.92; }
+      .dotnav { display: flex; gap: 0.65rem; align-items: center; }
+      .dot { position: relative; width: 9px; height: 9px; border-radius: 50%; background: var(--aw-border); transition: all var(--aw-base) var(--aw-ease); }
+      .dot:hover { background: var(--aw-muted); transform: scale(1.2); }
+      .dot.active { background: var(--aw-accent); box-shadow: 0 0 0 4px var(--aw-accent-soft); }
+      .dot-label {
+        position: absolute; top: 150%; left: 50%; transform: translateX(-50%);
+        font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--aw-muted);
+        white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity var(--aw-fast) var(--aw-ease);
+      }
+      .dot:hover .dot-label { opacity: 1; }
+      .topcta {
+        padding: 0.5rem 1.2rem; border-radius: var(--aw-radius-sm);
+        background: var(--aw-accent); color: #071019; font-size: 0.8rem; font-weight: 700;
+        transition: background var(--aw-base) var(--aw-ease);
+      }
+      .topcta:hover { background: var(--aw-accent-light); }
+      @media (max-width: 760px) { .dotnav { display: none; } }
+
+      /* ---- layout ---- */
+      main > section { padding: 4.5rem 1.5rem; }
+      .wrap { max-width: 980px; margin: 0 auto; }
+      .wrap.narrow { max-width: 680px; }
+      .band.alt { background: linear-gradient(180deg, rgba(34,69,201,0.07), rgba(79,164,216,0.02)); }
+      .band-title { font-size: clamp(1.7rem, 4.2vw, 2.7rem); margin: 0.4rem 0 1.6rem; line-height: 1.06; }
+      .sub-h { font-size: 1.4rem; margin: 3rem 0 1.4rem; }
+      .sub-h.tight { margin: 0 0 0.4rem; }
+      .band-body { font-size: 1.08rem; line-height: 1.7; color: var(--aw-foreground); opacity: 0.92; margin: 0 0 1.2rem; }
+      .band-body strong { color: var(--aw-accent-light); }
+
+      /* ---- reveal ---- */
+      .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s var(--aw-ease), transform 0.6s var(--aw-ease); }
+      .reveal.in { opacity: 1; transform: none; }
+      @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+      /* ---- hero ---- */
+      .hero {
+        display: flex; align-items: center; justify-content: center;
+        padding-top: 9rem !important; padding-bottom: 5rem !important;
+        text-align: center; position: relative; overflow: hidden;
+        background:
+          radial-gradient(1100px 520px at 50% -8%, rgba(34,69,201,0.38), transparent 60%),
+          radial-gradient(700px 400px at 80% 110%, rgba(79,164,216,0.12), transparent 60%);
+      }
+      .hero-inner { max-width: 920px; }
+      .hero-title {
+        font-size: clamp(2.4rem, 7vw, 4.8rem); line-height: 1.02; margin: 1rem 0 1.6rem; letter-spacing: -0.01em;
+      }
+      .hero-dim { color: var(--aw-accent); }
+      .hero-sub { font-size: clamp(1.05rem, 2.4vw, 1.35rem); color: var(--aw-foreground); margin: 0 0 1.4rem; }
+      .hero-sub strong { color: var(--aw-accent-light); }
+      .hero-meta {
+        display: flex; flex-wrap: wrap; gap: 0.55rem; justify-content: center;
+        font-size: 0.92rem; color: var(--aw-muted);
+      }
+      .hero-meta .sep { color: var(--aw-border); }
+      .scrollcue {
+        display: inline-flex; flex-direction: column; align-items: center; gap: 0.5rem;
+        margin-top: 2.2rem; color: var(--aw-muted); font-size: 0.78rem; text-transform: uppercase;
+        letter-spacing: 0.18em;
+      }
+      .scrollcue .chev { animation: bob 1.8s var(--aw-ease) infinite; font-size: 1rem; color: var(--aw-accent); }
+      @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+
+      /* ---- letter ---- */
+      .letter {
+        background: var(--aw-surface); border: 1px solid var(--aw-border);
+        border-left: 3px solid var(--aw-accent); border-radius: var(--aw-radius-lg);
+        padding: 2.5rem; margin-top: 1.2rem;
+      }
+      .letter p { font-size: 1.06rem; line-height: 1.78; color: var(--aw-foreground); opacity: 0.94; margin: 0 0 1.15rem; }
+      .letter-greet { font-weight: 700; margin-bottom: 1.4rem !important; }
+      .letter-sign {
+        font-family: "Fraunces", Georgia, serif; font-style: italic; font-size: 1.5rem !important;
+        color: var(--aw-accent-light); margin-top: 1.6rem !important; opacity: 1 !important;
+      }
+      @media (max-width: 560px) { .letter { padding: 1.6rem; } }
+
+      /* ---- deliverables ---- */
+      .show-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin-top: 2rem; }
+      .show-card {
+        position: relative; background: var(--aw-surface); border: 1px solid var(--aw-border);
+        border-radius: var(--aw-radius-md); overflow: hidden;
+        transition: border-color var(--aw-base) var(--aw-ease), transform var(--aw-base) var(--aw-ease);
+      }
+      .show-card:hover { border-color: var(--aw-accent-line); transform: translateY(-3px); }
+      .show-card > img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-bottom: 1px solid var(--aw-border); }
+      .show-pad { padding: 1.6rem 1.8rem; }
+      .show-num { font-size: 2.2rem; color: var(--aw-accent); opacity: 0.55; line-height: 1; }
+      .show-title { font-size: 1.35rem; margin: 0.7rem 0 0.8rem; }
+      .show-desc { font-size: 0.97rem; color: var(--aw-foreground); opacity: 0.9; line-height: 1.62; margin: 0 0 1.1rem; }
+      .show-spec {
+        font-size: 0.78rem; color: var(--aw-muted); letter-spacing: 0.04em; margin: 0;
+        border-top: 1px solid var(--aw-border); padding-top: 0.9rem;
+      }
+      @media (max-width: 760px) { .show-grid { grid-template-columns: 1fr; } }
+
+      /* ---- setting row: vertical video + shoot settings ---- */
+      .setting-row {
+        display: grid; grid-template-columns: 320px 1fr; gap: 2.2rem; align-items: start;
+        margin-top: 2.6rem;
+      }
+      .video-frame-vert {
+        position: relative; aspect-ratio: 9 / 16; width: 100%;
+        border-radius: var(--aw-radius-lg); overflow: hidden;
+        border: 1px solid var(--aw-border); background: #000;
+      }
+      .video-frame-vert iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+      .media-cap { font-size: 0.8rem; color: var(--aw-muted); letter-spacing: 0.04em; margin: 0.8rem 0 0; }
+      .setting-col { display: flex; flex-direction: column; gap: 1rem; padding-top: 0.4rem; }
+      .setting-card {
+        display: flex; align-items: stretch; overflow: hidden;
+        background: var(--aw-surface); border: 1px solid var(--aw-border); border-top: 2px solid var(--aw-accent);
+        border-radius: var(--aw-radius-md);
+      }
+      .setting-card > img { flex: 0 0 170px; width: 170px; object-fit: cover; display: block; border-right: 1px solid var(--aw-border); }
+      .setting-pad { padding: 1.3rem 1.4rem; }
+      .setting-card h4 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+      .setting-card p { margin: 0; color: var(--aw-muted); line-height: 1.6; font-size: 0.93rem; }
+      @media (max-width: 520px) { .setting-card > img { flex-basis: 110px; width: 110px; } }
+      .setting-note { font-size: 0.92rem; color: var(--aw-accent-light); font-weight: 500; margin: 0.2rem 0 0; }
+      @media (max-width: 760px) {
+        .setting-row { grid-template-columns: 1fr; }
+        .video-vert { max-width: 320px; margin: 0 auto; }
+      }
+
+      /* ---- rate table ---- */
+      .rate-table { border: 1px solid var(--aw-border); border-radius: var(--aw-radius-lg); overflow: hidden; margin: 1.8rem 0; }
+      .rate-head, .rate-row { display: grid; grid-template-columns: 1fr 140px 140px; align-items: center; }
+      .rate-head {
+        background: var(--aw-surface-light); padding: 0.85rem 1.4rem;
+        font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--aw-muted); font-weight: 700;
+      }
+      .rate-head span { text-align: right; }
+      .rate-head span:first-child { text-align: left; }
+      .rate-head .partner-col { color: var(--aw-accent); }
+      .rate-row { padding: 1rem 1.4rem; border-top: 1px solid var(--aw-border); background: var(--aw-surface); }
+      .rate-row.highlight { background: var(--aw-accent-soft); }
+      .rate-item { font-size: 0.97rem; color: var(--aw-foreground); display: flex; flex-direction: column; gap: 0.15rem; }
+      .rate-item em { font-style: normal; font-size: 0.74rem; color: var(--aw-muted); }
+      .rate-std { font-size: 1rem; color: var(--aw-muted); text-align: right; }
+      .rate-partner { font-family: var(--aw-font-display); font-weight: 900; font-size: 1.45rem; color: var(--aw-accent); text-align: right; letter-spacing: 0.02em; }
+      @media (max-width: 640px) {
+        .rate-head, .rate-row { grid-template-columns: 1fr 90px 90px; padding-left: 1rem; padding-right: 1rem; }
+        .rate-partner { font-size: 1.2rem; }
+      }
+
+      .context-note { font-size: 0.92rem; color: var(--aw-muted); line-height: 1.65; margin: 1rem 0 0; }
+
+      /* ---- partner banner ---- */
+      .partner-banner {
+        display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+        margin-top: 2.4rem; padding: 1.8rem 2rem;
+        background: linear-gradient(135deg, var(--aw-deep-dark), rgba(34,69,201,0.25));
+        border: 1px solid var(--aw-accent-line); border-radius: var(--aw-radius-lg);
+        transition: border-color var(--aw-base) var(--aw-ease), transform var(--aw-base) var(--aw-ease);
+      }
+      .partner-banner:hover { border-color: var(--aw-accent); transform: translateY(-2px); }
+      .partner-banner-title { font-size: 1.3rem; margin: 0 0 0.35rem; color: var(--aw-foreground); }
+      .partner-banner-sub { font-size: 0.92rem; color: var(--aw-muted); margin: 0; line-height: 1.55; }
+      .partner-banner-cta {
+        flex: 0 0 auto; padding: 0.8rem 1.5rem; border-radius: var(--aw-radius-sm);
+        background: var(--aw-accent); color: #071019; font-weight: 700; font-size: 0.92rem;
+        white-space: nowrap;
+      }
+      @media (max-width: 640px) {
+        .partner-banner { flex-direction: column; align-items: flex-start; }
+      }
+
+      /* ---- close ---- */
+      .band.close {
+        background:
+          radial-gradient(900px 420px at 50% 120%, rgba(34,69,201,0.34), transparent 62%);
+        text-align: center;
+      }
+      .close-title { font-size: clamp(1.7rem, 4.6vw, 2.9rem); margin: 0.5rem auto 2rem; max-width: 780px; line-height: 1.06; }
+      .steps { list-style: none; padding: 0; margin: 0 auto 2.6rem; max-width: 620px; text-align: left; display: flex; flex-direction: column; gap: 0.8rem; }
+      .steps li { display: flex; align-items: flex-start; gap: 1rem; color: var(--aw-foreground); opacity: 0.94; font-size: 1.02rem; line-height: 1.55; }
+      .steps li span {
+        flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; background: var(--aw-accent-soft);
+        border: 1px solid var(--aw-accent-line); color: var(--aw-accent-light); font-family: var(--aw-font-display);
+        font-weight: 900; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; margin-top: 0.1rem;
+      }
+      .cta-row { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
+      .sign-off { margin-top: 3rem; }
+      .sign-name { font-size: 1.4rem; color: var(--aw-foreground); }
+      .sign-org { color: var(--aw-muted); font-size: 0.9rem; margin-top: 0.2rem; }
+
+      /* ---- footer ---- */
+      .site-footer {
+        display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+        padding: 2rem 1.5rem; border-top: 1px solid var(--aw-border);
+        color: var(--aw-muted); font-size: 0.78rem; max-width: 980px; margin: 0 auto;
+      }
+      .footer-brand { display: flex; align-items: center; gap: 0.5rem; }
+
+      @media (max-width: 560px) {
+        main > section { padding: 3.5rem 1.2rem; }
+        .hero { padding-top: 7rem !important; padding-bottom: 3.5rem !important; }
+        .topbar { padding: 0.75rem 1.1rem; }
+      }
+    </style>
+  </body>
+</html>
