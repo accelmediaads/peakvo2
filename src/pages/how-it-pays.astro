@@ -1,0 +1,298 @@
+---
+import '../styles/peakvo2-brand.css';
+
+const accelLogo = '/logos/AccelLogo-Horizontal.png';
+
+// One payment per customer, at the first sale. Numbers are Jackson's structure as written.
+const payouts = [
+  { who: 'Individual, device only (Basic)', math: '$50', total: '$50' },
+  { who: 'Individual, device + Pro monthly', math: '$50 + $5', total: '$55' },
+  { who: 'Individual, device + Pro annual', math: '$50 + $20', total: '$70' },
+  { who: 'Small gym, device + monthly', math: '$50 + $10', total: '$60' },
+  { who: 'Small gym, device + annual', math: '$50 + $100', total: '$150' },
+  { who: 'Large gym, device + monthly', math: '$50 + $20', total: '$70' },
+  { who: 'Large gym, device + annual', math: '$50 + $200', total: '$250', highlight: true },
+];
+
+const parts = [
+  { n: '01', t: 'Campaign management', amt: '$750 / month', d: 'Covers building and running the Meta, YouTube, and Google campaigns, landing pages, and tracking. Ad spend is separate and stays in your accounts. Per the proposal, to be confirmed.' },
+  { n: '02', t: 'Commission per sale', amt: 'Table above', d: 'One payment for every customer the campaigns bring in, paid at the first sale. Nothing recurring, nothing on renewals.' },
+  { n: '03', t: 'Production at partner rate', amt: '$1,750', d: 'Launch hype reel, 30s homepage cut, and three social verticals, all from one shoot day. Half the standard rate because the partnership pays on results.' },
+];
+
+const rules = [
+  { t: 'Tracked ad, 60 to 90 day window', d: 'A customer who touched a tracked ad in the previous 60 to 90 days is credited to the campaigns, no matter who closes the sale. Source is captured automatically on the form. Proposed.' },
+  { t: 'Paid on net sales', d: 'Commission is calculated after the 30 day return window closes, so returns come off before payout.' },
+  { t: 'Not credited', d: 'Sales your team sources directly by phone with no tracked ad touch, and the gyms already in your pipeline before launch.' },
+];
+
+// Worked example: 15 individuals (5 Basic, 6 Pro annual, 4 Pro monthly) + 1 small gym annual
+const example = [
+  { line: '5 individuals, device only', calc: '5 × $50', amt: '$250' },
+  { line: '6 individuals, Pro annual', calc: '6 × $70', amt: '$420' },
+  { line: '4 individuals, Pro monthly', calc: '4 × $55', amt: '$220' },
+  { line: '1 small gym, annual', calc: '1 × $150', amt: '$150' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="How the PeakVO₂ × Accel Media performance partnership pays, in plain terms." />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <title>PeakVO₂ × Accel Media | How the Partnership Pays</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="/" class="cobrand">
+        <span class="cobrand-client font-display">PEAKVO<sub>2</sub></span>
+        <span class="cobrand-x">×</span>
+        <img src={accelLogo} alt="Accel Media" class="cobrand-logo" />
+      </a>
+      <a href="/partnership" class="backlink">← Back to the partnership</a>
+    </header>
+
+    <main>
+      <section class="hero-lite">
+        <div class="wrap">
+          <p class="aw-eyebrow">The Performance Partnership</p>
+          <h1 class="lite-title">How it pays.<br /><span class="hero-dim">One payment per customer.</span></h1>
+          <p class="band-body lead">
+            Every customer the campaigns bring in earns one commission, paid once, at the first sale.
+            Nothing recurring. Nothing on renewals. Here is the whole thing on one page.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ PAYOUT TABLE ============ -->
+      <section class="band tightband">
+        <div class="wrap">
+          <h2 class="band-title">What each customer pays out</h2>
+          <div class="pay-table" role="table" aria-label="Commission per customer">
+            <div class="pay-head" role="row">
+              <span role="columnheader">Customer</span>
+              <span role="columnheader">Device + subscription</span>
+              <span role="columnheader" class="partner-col">You get</span>
+            </div>
+            {payouts.map((p) => (
+              <div class:list={['pay-row', { highlight: p.highlight }]} role="row">
+                <span class="pay-who" role="cell">{p.who}</span>
+                <span class="pay-math" role="cell">{p.math}</span>
+                <span class="pay-total" role="cell">{p.total}</span>
+              </div>
+            ))}
+          </div>
+          <p class="context-note">
+            $50 for every device. The second number depends on which subscription the customer picks at
+            signup. Gyms on an annual plan are the biggest line items by a wide margin.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ WORKED EXAMPLE ============ -->
+      <section class="band alt">
+        <div class="wrap">
+          <p class="aw-eyebrow">A realistic early month</p>
+          <h2 class="band-title">15 individuals and 1 gym</h2>
+          <div class="ex-card">
+            {example.map((e) => (
+              <div class="ex-row">
+                <span class="ex-line">{e.line}</span>
+                <span class="ex-calc">{e.calc}</span>
+                <span class="ex-amt">{e.amt}</span>
+              </div>
+            ))}
+            <div class="ex-row subtotal">
+              <span class="ex-line">Commission</span>
+              <span class="ex-calc"></span>
+              <span class="ex-amt">$1,040</span>
+            </div>
+            <div class="ex-row">
+              <span class="ex-line">Campaign management</span>
+              <span class="ex-calc">flat</span>
+              <span class="ex-amt">$750</span>
+            </div>
+            <div class="ex-row total">
+              <span class="ex-line">Month total</span>
+              <span class="ex-calc"></span>
+              <span class="ex-amt">$1,790</span>
+            </div>
+          </div>
+          <p class="context-note">
+            Commission scales with volume. At 40 devices and 2 gyms in a month, the same math lands
+            around $2,800 in commission plus the $750, roughly $3,500 total.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ THREE PARTS ============ -->
+      <section class="band">
+        <div class="wrap">
+          <h2 class="band-title">The three parts</h2>
+          <div class="part-grid">
+            {parts.map((p) => (
+              <div class="part-card">
+                <span class="part-num font-display">{p.n}</span>
+                <h4>{p.t}</h4>
+                <p class="part-amt">{p.amt}</p>
+                <p>{p.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CREDIT RULES ============ -->
+      <section class="band alt">
+        <div class="wrap">
+          <h2 class="band-title">How a sale gets credited</h2>
+          <div class="rule-list">
+            {rules.map((r) => (
+              <div class="rule-card">
+                <h4>{r.t}</h4>
+                <p>{r.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CLOSE ============ -->
+      <section class="band close">
+        <div class="wrap">
+          <h2 class="close-title">That's the whole structure.</h2>
+          <div class="cta-row">
+            <a href="/partnership" class="aw-btn-secondary">Back to the partnership</a>
+            <a href="/" class="aw-btn-secondary">Back to the proposal</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <span class="cobrand-client font-display" style="font-size:0.9rem;">PEAKVO<sub>2</sub></span>
+        <span class="cobrand-x">×</span>
+        <img src={accelLogo} alt="Accel Media" class="cobrand-logo" />
+      </div>
+      <span>Prepared by Accel Media for PeakVO₂ Analytics. Confidential.</span>
+    </footer>
+
+    <style is:global>
+      html { scroll-behavior: smooth; }
+      body { margin: 0; }
+      sub { font-size: 0.6em; line-height: 0; }
+
+      /* ---- top bar ---- */
+      .topbar {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+        display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+        padding: 0.85rem 1.5rem;
+        background: rgba(7, 9, 13, 0.72); backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--aw-border);
+      }
+      .cobrand { display: flex; align-items: center; gap: 0.55rem; }
+      .cobrand-client { font-size: 1rem; letter-spacing: 0.14em; color: var(--aw-accent); }
+      .cobrand-x { color: var(--aw-muted); font-size: 0.8rem; }
+      .cobrand-logo { height: 18px; width: auto; display: block; opacity: 0.92; }
+      .backlink { font-size: 0.85rem; color: var(--aw-muted); font-weight: 500; transition: color var(--aw-base) var(--aw-ease); }
+      .backlink:hover { color: var(--aw-accent-light); }
+
+      /* ---- layout ---- */
+      main > section { padding: 4rem 1.5rem; }
+      .wrap { max-width: 900px; margin: 0 auto; }
+      .band.alt { background: linear-gradient(180deg, rgba(34,69,201,0.07), rgba(79,164,216,0.02)); }
+      .band.tightband { padding-top: 1rem; }
+      .band-title { font-size: clamp(1.5rem, 3.6vw, 2.2rem); margin: 0.4rem 0 1.4rem; line-height: 1.06; }
+      .band-body { font-size: 1.08rem; line-height: 1.7; color: var(--aw-foreground); opacity: 0.92; margin: 0 0 1.2rem; }
+      .band-body.lead { font-size: 1.12rem; max-width: 680px; }
+      .context-note { font-size: 0.92rem; color: var(--aw-muted); line-height: 1.65; margin: 1rem 0 0; }
+
+      /* ---- hero-lite ---- */
+      .hero-lite {
+        padding-top: 8rem !important; padding-bottom: 1rem !important;
+        background: radial-gradient(1100px 420px at 50% -12%, rgba(34,69,201,0.35), transparent 60%);
+      }
+      .lite-title { font-size: clamp(2rem, 5.4vw, 3.6rem); line-height: 1.02; margin: 1rem 0 1.2rem; letter-spacing: -0.01em; }
+      .hero-dim { color: var(--aw-accent); }
+
+      /* ---- payout table ---- */
+      .pay-table { border: 1px solid var(--aw-border); border-radius: var(--aw-radius-lg); overflow: hidden; margin: 1.2rem 0 0; }
+      .pay-head, .pay-row { display: grid; grid-template-columns: 1fr 170px 120px; align-items: center; }
+      .pay-head {
+        background: var(--aw-surface-light); padding: 0.85rem 1.4rem;
+        font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--aw-muted); font-weight: 700;
+      }
+      .pay-head span { text-align: right; }
+      .pay-head span:first-child { text-align: left; }
+      .pay-head .partner-col { color: var(--aw-accent); }
+      .pay-row { padding: 0.95rem 1.4rem; border-top: 1px solid var(--aw-border); background: var(--aw-surface); }
+      .pay-row.highlight { background: var(--aw-accent-soft); }
+      .pay-who { font-size: 0.97rem; color: var(--aw-foreground); }
+      .pay-math { font-size: 0.9rem; color: var(--aw-muted); text-align: right; }
+      .pay-total { font-family: var(--aw-font-display); font-weight: 900; font-size: 1.35rem; color: var(--aw-accent); text-align: right; letter-spacing: 0.02em; }
+      @media (max-width: 600px) {
+        .pay-head, .pay-row { grid-template-columns: 1fr 100px 80px; padding-left: 1rem; padding-right: 1rem; }
+        .pay-total { font-size: 1.1rem; }
+      }
+
+      /* ---- worked example ---- */
+      .ex-card { border: 1px solid var(--aw-border); border-radius: var(--aw-radius-lg); overflow: hidden; background: var(--aw-surface); }
+      .ex-row { display: grid; grid-template-columns: 1fr 120px 110px; align-items: center; padding: 0.85rem 1.4rem; border-top: 1px solid var(--aw-border); }
+      .ex-row:first-child { border-top: 0; }
+      .ex-line { font-size: 0.97rem; color: var(--aw-foreground); }
+      .ex-calc { font-size: 0.85rem; color: var(--aw-muted); text-align: right; }
+      .ex-amt { font-size: 1rem; color: var(--aw-foreground); text-align: right; font-weight: 500; }
+      .ex-row.subtotal { background: var(--aw-surface-light); }
+      .ex-row.subtotal .ex-line, .ex-row.subtotal .ex-amt { font-weight: 700; }
+      .ex-row.total { background: var(--aw-accent-soft); }
+      .ex-row.total .ex-line { font-weight: 700; }
+      .ex-row.total .ex-amt { font-family: var(--aw-font-display); font-weight: 900; font-size: 1.4rem; color: var(--aw-accent); }
+      @media (max-width: 600px) { .ex-row { grid-template-columns: 1fr 80px 90px; padding-left: 1rem; padding-right: 1rem; } }
+
+      /* ---- parts ---- */
+      .part-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .part-card {
+        background: var(--aw-surface); border: 1px solid var(--aw-border); border-radius: var(--aw-radius-md);
+        padding: 1.6rem 1.4rem; display: flex; flex-direction: column;
+      }
+      .part-num { font-size: 1.6rem; color: var(--aw-accent); opacity: 0.55; line-height: 1; margin-bottom: 0.7rem; }
+      .part-card h4 { margin: 0 0 0.3rem; font-size: 1.05rem; }
+      .part-amt { font-family: var(--aw-font-display); font-weight: 900; font-size: 1.25rem; color: var(--aw-accent); margin: 0 0 0.7rem; }
+      .part-card p { margin: 0; color: var(--aw-muted); line-height: 1.6; font-size: 0.9rem; }
+      @media (max-width: 760px) { .part-grid { grid-template-columns: 1fr; } }
+
+      /* ---- rules ---- */
+      .rule-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .rule-card { background: var(--aw-surface); border: 1px solid var(--aw-border); border-top: 2px solid var(--aw-accent); border-radius: var(--aw-radius-md); padding: 1.4rem; }
+      .rule-card h4 { margin: 0 0 0.5rem; font-size: 1rem; }
+      .rule-card p { margin: 0; color: var(--aw-muted); line-height: 1.55; font-size: 0.9rem; }
+      @media (max-width: 760px) { .rule-list { grid-template-columns: 1fr; } }
+
+      /* ---- close ---- */
+      .band.close { background: radial-gradient(900px 420px at 50% 120%, rgba(34,69,201,0.34), transparent 62%); text-align: center; }
+      .close-title { font-size: clamp(1.5rem, 4vw, 2.4rem); margin: 0.5rem auto 1.6rem; line-height: 1.06; }
+      .cta-row { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
+
+      /* ---- footer ---- */
+      .site-footer {
+        display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+        padding: 2rem 1.5rem; border-top: 1px solid var(--aw-border);
+        color: var(--aw-muted); font-size: 0.78rem; max-width: 900px; margin: 0 auto;
+      }
+      .footer-brand { display: flex; align-items: center; gap: 0.5rem; }
+
+      @media (max-width: 560px) {
+        main > section { padding: 3rem 1.2rem; }
+        .topbar { padding: 0.75rem 1.1rem; }
+        .hero-lite { padding-top: 6.5rem !important; }
+      }
+    </style>
+  </body>
+</html>

@@ -41,6 +41,13 @@ asked for, clear CTA to a secondary page for the partnership")
   wall + custom lighting) / "On location" (outdoors), plus "Or both. We can get as creative
   as you want to get.") → The Quote (Standard/Partner table + partner-banner CTA "Why is the
   right column half price? → See how it works" linking /partnership) → Next Steps + CTAs.
+- **`/how-it-pays` (how-it-pays.astro, added Sep 7)**: plain-English explainer of the commission
+  structure as Jackson wrote it: payout table per customer type ($50/device + one-time sub bump:
+  $5/$20 individual, $10/$100 small gym, $20/$200 large gym), worked month (15 individuals + 1 gym
+  = $1,040 commission + $750 mgmt = $1,790), the three parts (mgmt fee / commission / $1,750
+  production), and credit rules (60-90 day tracked-ad window PROPOSED, net of 30-day returns,
+  excludes direct-sourced + pre-launch pipeline gyms). One payment per customer, nothing recurring.
+  Built for Aaron's own clarity after the "3yr royalties" mix-up; client-safe wording.
 - **`/partnership` (partnership.astro)**: hero-lite ("I only win when you sell devices") →
   3 pillars + requirements context line → Why Video (3 count-up stats) → Proof (3 case cards
   with photos) → close CTA (call / email / back to quote). Topbar has "← Back to the proposal".
