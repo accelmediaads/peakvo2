@@ -41,14 +41,15 @@ asked for, clear CTA to a secondary page for the partnership")
   wall + custom lighting) / "On location" (outdoors), plus "Or both. We can get as creative
   as you want to get.") → The Quote (Standard/Partner table + partner-banner CTA "Why is the
   right column half price? → See how it works" linking /partnership) → Next Steps + CTAs.
-- **`/how-it-pays` (how-it-pays.astro, rebuilt Sep 7 as CLIENT-FACING economics page)**:
-  "The economics, both sides." All figures are PeakVO₂'s own (Jackson, Aug 5). Sections: one
-  device start-to-finish ledger ($999 → −$650 landed −$29 Stripe −$30 warranty = $290 gross →
-  −$50 Accel = $240 you keep); subscriptions (individuals via app store ~20% fee, commercial
-  via Stripe ~3%; Accel paid once, renewals 100% theirs); each-customer year-one table (pays /
-  costs / Accel / keeps / Accel's share 11–17% / renewal all theirs); a month both sides (16
-  devices → $6,635 gross → −$1,040 commission −$750 mgmt = $4,845 they keep, before ad spend);
-  three parts; credit rules (60–90 day window PROPOSED). Written to Jackson in 2nd person.
+- **`/how-it-pays` (how-it-pays.astro, CLIENT-FACING economics page; FINAL structure Sep 7)**:
+  "The economics, both sides." All figures are PeakVO₂'s own (Jackson, Aug 5). **Commission is
+  $50 per device, one time, and that is the ENTIRE commission.** No subscription bump, nothing
+  on renewals (Aaron: "makes things confusing, don't want them on the hook forever"). Sections:
+  device ledger ($999 → −$650 landed −$29 Stripe −$30 warranty = $290 gross → −$50 Accel = $240
+  they keep); subscriptions "all yours" (net after app-store ~20% / Stripe ~3%, Accel $0);
+  each-customer year-one table (Accel $50 flat, share 2–17% of first-year gross); a month both
+  sides (16 devices → $6,635 gross → −$800 commission −$750 mgmt = $5,085 they keep, before ad
+  spend); three parts; credit rules (60–90 day window PROPOSED). Second person to Jackson.
 - **`/partnership` (partnership.astro)**: hero-lite ("I only win when you sell devices") →
   3 pillars + requirements context line → Why Video (3 count-up stats) → Proof (3 case cards
   with photos) → close CTA (call / email / back to quote). Topbar has "← Back to the proposal".

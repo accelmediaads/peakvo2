@@ -5,7 +5,7 @@ const accelLogo = '/logos/AccelLogo-Horizontal.png';
 
 // Every figure below comes from PeakVO₂'s own numbers (Jackson, Aug 5): $999 retail, $650 landed
 // cost, Stripe ~2.9% + $0.30, 3% warranty reserve, ~20% app-store fee on individual mobile subs,
-// commercial billed direct via Stripe. Commission = Jackson's structure as written.
+// commercial billed direct via Stripe. Commission = $50 per device, one time. Nothing on subscriptions.
 
 const device = [
   { line: 'Customer pays', amt: '$999', kind: 'in' },
@@ -21,26 +21,26 @@ const subs = [
   {
     t: 'Individuals (billed through the app stores)',
     rows: [
-      ['Pro annual', '$200', 'about $40 to Apple / Google', '$160', '$20 once', '$140', '$160, all yours'],
-      ['Pro monthly', '$20 / mo', 'about $4 / mo', '$16 / mo', '$5 once', '$187 in year one', '$192 / yr, all yours'],
+      ['Pro annual', '$200', 'about $40 to Apple / Google', '$160 / yr'],
+      ['Pro monthly', '$20 / mo', 'about $4 / mo', '$16 / mo'],
     ],
   },
   {
     t: 'Commercial (billed direct through Stripe, no app-store cut)',
     rows: [
-      ['Small gym, annual', '$1,000', 'about $29', '$971', '$100 once', '$871', '$971 / yr, all yours'],
-      ['Large gym, annual', '$2,000', 'about $58', '$1,942', '$200 once', '$1,742', '$1,942 / yr, all yours'],
+      ['Small gym, annual', '$1,000', 'about $29', '$971 / yr'],
+      ['Large gym, annual', '$2,000', 'about $58', '$1,942 / yr'],
     ],
   },
 ];
 
-// Full first-year picture per customer: device + subscription together.
+// Full first-year picture per customer: device + subscription together. Accel = $50 on the device only.
 const yearOne = [
   { who: 'Individual, device only', pays: '$999', costs: '$709', accel: '$50', keeps: '$240', share: '17%', renew: 'n/a' },
-  { who: 'Individual, device + Pro monthly', pays: '$1,239', costs: '$757', accel: '$55', keeps: '$427', share: '11%', renew: '$192 / yr' },
-  { who: 'Individual, device + Pro annual', pays: '$1,199', costs: '$749', accel: '$70', keeps: '$380', share: '16%', renew: '$160 / yr' },
-  { who: 'Small gym, device + annual', pays: '$1,999', costs: '$738', accel: '$150', keeps: '$1,111', share: '12%', renew: '$971 / yr' },
-  { who: 'Large gym, device + annual', pays: '$2,999', costs: '$767', accel: '$250', keeps: '$1,982', share: '11%', renew: '$1,942 / yr', highlight: true },
+  { who: 'Individual, device + Pro monthly', pays: '$1,239', costs: '$757', accel: '$50', keeps: '$432', share: '10%', renew: '$192 / yr' },
+  { who: 'Individual, device + Pro annual', pays: '$1,199', costs: '$749', accel: '$50', keeps: '$400', share: '11%', renew: '$160 / yr' },
+  { who: 'Small gym, device + annual', pays: '$1,999', costs: '$738', accel: '$50', keeps: '$1,211', share: '4%', renew: '$971 / yr' },
+  { who: 'Large gym, device + annual', pays: '$2,999', costs: '$767', accel: '$50', keeps: '$2,182', share: '2%', renew: '$1,942 / yr', highlight: true },
 ];
 
 // A month, both sides: 16 devices (5 Basic, 6 Pro annual, 4 Pro monthly, 1 small gym annual).
@@ -49,14 +49,14 @@ const month = [
   { line: 'Device costs (landed + processing + reserve)', calc: '16 × $709', amt: '$11,344', kind: 'cost' },
   { line: 'Subscriptions collected, net of app-store and Stripe fees', calc: '6 annual + 4 monthly + 1 gym', amt: '$1,995', kind: 'in' },
   { line: 'Gross profit before marketing', calc: '', amt: '$6,635', kind: 'sub' },
-  { line: 'Accel commission', calc: '5 × $50 + 6 × $70 + 4 × $55 + $150', amt: '$1,040', kind: 'cost' },
+  { line: 'Accel commission', calc: '16 × $50', amt: '$800', kind: 'cost' },
   { line: 'Accel campaign management', calc: 'flat', amt: '$750', kind: 'cost' },
-  { line: 'You keep', calc: 'before ad spend, which stays in your accounts', amt: '$4,845', kind: 'total' },
+  { line: 'You keep', calc: 'before ad spend, which stays in your accounts', amt: '$5,085', kind: 'total' },
 ];
 
 const parts = [
   { n: '01', t: 'Campaign management', amt: '$750 / month', d: 'Building and running the Meta, YouTube, and Google campaigns, landing pages, and tracking. Ad spend is separate, in your accounts, at a budget you set.' },
-  { n: '02', t: 'Commission per sale', amt: 'one time', d: '$50 per device plus the subscription figure above, paid once at the first sale. Nothing recurring. Every renewal is 100% yours.' },
+  { n: '02', t: 'Commission per device', amt: '$50, one time', d: 'Paid once, at the sale, for every device the campaigns bring in. Nothing on subscriptions. Nothing on renewals. Nothing recurring.' },
   { n: '03', t: 'Production at partner rate', amt: '$1,750', d: 'Launch hype reel, 30 second homepage cut, and three social verticals from one shoot day. Half the standard rate because the partnership pays on results.' },
 ];
 
@@ -97,8 +97,8 @@ const rules = [
           <h1 class="lite-title">The economics,<br /><span class="hero-dim">both sides.</span></h1>
           <p class="band-body lead">
             Every number on this page is yours: $999 retail, $650 landed cost, your processing and
-            warranty estimates, your subscription tiers. Accel earns one commission per customer,
-            paid once at the first sale. Every renewal after that is 100% yours.
+            warranty estimates, your subscription tiers. Accel earns $50 per device, paid once at the
+            sale. Subscriptions and renewals are 100% yours.
           </p>
         </div>
       </section>
@@ -126,9 +126,10 @@ const rules = [
       <!-- ============ SUBSCRIPTIONS ============ -->
       <section class="band alt">
         <div class="wrap">
-          <h2 class="band-title">Subscriptions</h2>
+          <h2 class="band-title">Subscriptions: all yours</h2>
           <p class="band-body">
-            Accel is paid once when the subscription starts. Renewals are never commissioned.
+            Accel takes nothing on any plan, monthly or annual, individual or commercial, at signup or
+            on renewal. This is what each plan nets you after platform fees.
           </p>
           {subs.map((g) => (
             <div class="sub-group">
@@ -136,11 +137,11 @@ const rules = [
               <div class="scroll">
                 <div class="grid-table sub-table" role="table">
                   <div class="g-head" role="row">
-                    <span>Plan</span><span>Customer pays</span><span>Platform fee</span><span>Net to you</span><span>Accel</span><span>You keep, year one</span><span>Every renewal</span>
+                    <span>Plan</span><span>Customer pays</span><span>Platform fee</span><span>Net to you, every year</span>
                   </div>
                   {g.rows.map((r) => (
                     <div class="g-row" role="row">
-                      {r.map((c, i) => <span class:list={[{ 'g-accent': i === 5, 'g-strong': i === 6 }]}>{c}</span>)}
+                      {r.map((c, i) => <span class:list={[{ 'g-strong': i === 3 }]}>{c}</span>)}
                     </div>
                   ))}
                 </div>
@@ -154,7 +155,7 @@ const rules = [
       <section class="band">
         <div class="wrap">
           <h2 class="band-title">Each customer, year one</h2>
-          <p class="band-body">Device and subscription together. Costs are landed cost, processing, warranty reserve, and any app-store fee.</p>
+          <p class="band-body">Device and subscription together. Costs are landed cost, processing, warranty reserve, and any app-store fee. Accel's $50 is the same on every row.</p>
           <div class="scroll">
             <div class="grid-table y1-table" role="table">
               <div class="g-head" role="row">
@@ -168,9 +169,8 @@ const rules = [
             </div>
           </div>
           <p class="context-note">
-            Across every customer type, Accel takes 11 to 17% of first-year gross profit and nothing
-            after. Gyms are the biggest line items for both of us, and they are where the campaigns
-            will push hardest.
+            The more a customer is worth to you, the smaller Accel's share gets. On a large gym it is
+            about 2% of first-year profit, and nothing after.
           </p>
         </div>
       </section>
@@ -190,9 +190,9 @@ const rules = [
             ))}
           </div>
           <p class="context-note">
-            Accel's total that month, commission plus management, is $1,790, or about 27% of gross
-            profit. At 40 devices and two gyms, Accel's total is roughly $3,500 against about $16,000
-            in gross profit, closer to 22%. The fee is flat, so the share shrinks as you grow.
+            Accel's total that month, commission plus management, is $1,550, or about 23% of gross
+            profit. At 40 devices and two gyms, Accel's total is roughly $2,850 against about $17,800
+            in gross profit, around 16%. The management fee is flat, so the share shrinks as you grow.
           </p>
         </div>
       </section>
@@ -232,7 +232,7 @@ const rules = [
       <!-- ============ CLOSE ============ -->
       <section class="band close">
         <div class="wrap">
-          <h2 class="close-title">That's the whole structure.</h2>
+          <h2 class="close-title">One number. $50 a device.</h2>
           <div class="cta-row">
             <a href="tel:+12086590834" class="aw-btn-primary">Call (208) 659-0834</a>
             <a href="/partnership" class="aw-btn-secondary">Back to the partnership</a>
@@ -307,10 +307,11 @@ const rules = [
 
       /* ---- grid tables (subs + year one) ---- */
       .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-      .grid-table { border: 1px solid var(--aw-border); border-radius: var(--aw-radius-lg); overflow: hidden; min-width: 760px; }
+      .grid-table { border: 1px solid var(--aw-border); border-radius: var(--aw-radius-lg); overflow: hidden; min-width: 560px; }
+      .y1-table { min-width: 760px; }
       .g-head, .g-row { display: grid; align-items: center; }
-      .sub-table .g-head, .sub-table .g-row { grid-template-columns: 1.3fr 1fr 1.3fr 0.9fr 0.9fr 1.2fr 1.3fr; }
-      .y1-table .g-head, .y1-table .g-row { grid-template-columns: 1.7fr 0.8fr 0.9fr 0.8fr 0.9fr 1.1fr 1.3fr; }
+      .sub-table .g-head, .sub-table .g-row { grid-template-columns: 1.3fr 1fr 1.4fr 1.2fr; }
+      .y1-table .g-head, .y1-table .g-row { grid-template-columns: 1.7fr 0.8fr 0.9fr 0.7fr 0.9fr 1.1fr 1.3fr; }
       .g-head {
         background: var(--aw-surface-light); padding: 0.8rem 1.2rem; gap: 0.8rem;
         font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--aw-muted); font-weight: 700;
