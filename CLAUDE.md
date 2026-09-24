@@ -50,6 +50,17 @@ asked for, clear CTA to a secondary page for the partnership")
   each-customer year-one table (Accel $50 flat, share 2–17% of first-year gross); a month both
   sides (16 devices → $6,635 gross → −$800 commission −$750 mgmt = $5,085 they keep, before ad
   spend); three parts; credit rules (60–90 day window PROPOSED). Second person to Jackson.
+- **`/hero-film` (hero-film.astro, added Sep 23 2026)**: REVISED QUOTE against the "Peak VO₂ CORE
+  Videographer Brief" (Chris + Jackson, docx Sep 21). Their brief = scripted 60s commercial: 4
+  recurring cast (they provide), 7 setups (gym, treadmill assessment w/ trainer+iPad, indoor bike,
+  wooded trail, overlook hike, open-road cycling, staged "later assessment"), pro male VO, breathing→
+  percussion→music sound design, real app inserts, 16:9 + 9:16 + captions, dark→daylight arc. They
+  asked for a 2nd shoot day + offered a deposit. Page: beat-by-beat table (8 beats from the doc),
+  Day one studio/gym vs Day two outdoors, rate table w/ struck-through originals, deposit card,
+  "what the number covers." **Numbers:** hero film two days $8,000/$4,000 (was $2,500/$1,250); VO at
+  cost; shorts $1,500/$750 unchanged; revised package $9,500/$4,750 (was $3,500/$1,750); 50% deposit
+  $2,375 partner. Linked from index.astro quote section via a second `.partner-banner.revised`.
+  Committed locally, NOT pushed (Aaron deploys; repo auto-deploys on push).
 - **`/partnership` (partnership.astro)**: hero-lite ("I only win when you sell devices") →
   3 pillars + requirements context line → Why Video (3 count-up stats) → Proof (3 case cards
   with photos) → close CTA (call / email / back to quote). Topbar has "← Back to the proposal".
