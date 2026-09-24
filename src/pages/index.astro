@@ -195,6 +195,14 @@ const steps = [
             no lock-in.
           </p>
 
+          <a href="/hero-film" class="partner-banner reveal revised">
+            <div>
+              <p class="partner-banner-title font-display">Revised: the two-day hero film</p>
+              <p class="partner-banner-sub">Priced against your September brief. Four cast, seven setups, voiceover, 16:9 and 9:16.</p>
+            </div>
+            <span class="partner-banner-cta">See the revised quote →</span>
+          </a>
+
           <a href="/partnership" class="partner-banner reveal">
             <div>
               <p class="partner-banner-title font-display">Why is the right column half price?</p>
@@ -460,6 +468,8 @@ const steps = [
         transition: border-color var(--aw-base) var(--aw-ease), transform var(--aw-base) var(--aw-ease);
       }
       .partner-banner:hover { border-color: var(--aw-accent); transform: translateY(-2px); }
+      .partner-banner + .partner-banner { margin-top: 1rem; }
+      .partner-banner.revised { border-color: var(--aw-accent); }
       .partner-banner-title { font-size: 1.3rem; margin: 0 0 0.35rem; color: var(--aw-foreground); }
       .partner-banner-sub { font-size: 0.92rem; color: var(--aw-muted); margin: 0; line-height: 1.55; }
       .partner-banner-cta {

@@ -1,0 +1,315 @@
+---
+import '../styles/peakvo2-brand.css';
+
+const accelLogo = '/logos/AccelLogo-Horizontal.png';
+
+// Revised quote, Sep 2026, against the "Peak VO₂ CORE Videographer Brief" from Chris + Jackson.
+// Original one-day hype reel was $2,500 / $1,250. This is a scripted two-day commercial.
+
+const beats = [
+  { t: '0–3', v: 'Near darkness. Shoulders rise and fall. Translucent logo over the moving image.', a: 'Breathing only' },
+  { t: '3–9', v: 'Gym goer finishes a hard set. Older participant walks uphill on a treadmill. Focused faces.', a: '"What does it mean to be fit?"' },
+  { t: '9–15', v: 'Outdoor enthusiast climbs a wooded trail. Endurance cyclist on an indoor bike. CORE being fitted.', a: '"What does your breath reveal about your fitness?"' },
+  { t: '15–23', v: 'CORE detail, then a wide treadmill assessment with trainer and iPad. Text: CORE · Portable breath analysis.', a: '"You give it your time. Your energy. Your commitment."' },
+  { t: '23–35', v: 'Readable app inserts, trainer explaining results, daylight enters. Labels: Aerobic fitness. Fuel use. Training guidance.', a: '"Know where you are. Give your effort direction."' },
+  { t: '35–43', v: 'A visibly later assessment. Two dated results side by side. Text: Track your progress.', a: '"See how you change."' },
+  { t: '43–53', v: 'Treadmill footfall matched to a sunlit trail. All four people: gym, forest run, overlook hike, open-road cycling.', a: '"For the goals you chase. And everything you want to keep doing."' },
+  { t: '53–60', v: 'CORE and app together, then the logo. Hold the final card 3+ seconds. peakvo2fit.com', a: '"Peak VO₂ CORE. Know your engine. Own your progress."' },
+];
+
+const days = [
+  {
+    n: 'Day one', t: 'Studio and gym',
+    d: 'The dark, intimate half of the film. Breathing in near-black, the gym set, the treadmill assessment with trainer and iPad, the indoor bike, CORE being fitted, and the "later assessment" staged with a wardrobe change so the two dated results read as weeks apart.',
+    spec: 'Cyc wall + custom lighting · treadmill + indoor bike · trainer with real app on iPad · macro product work · sound-off labels framed for both crops',
+  },
+  {
+    n: 'Day two', t: 'Outdoors',
+    d: 'The daylight half. Wooded trail climb, sunlit trail run matched to the treadmill footfall, the older hiker at an overlook, the cyclist on open road. Shot for the moment the film "opens up."',
+    spec: 'Trailhead + overlook + open road around the lake · golden-hour window · all four cast · drone where it earns its place',
+  },
+];
+
+const rates = [
+  { item: 'Hero film, two production days', unit: '60s scripted film · 16:9 + 9:16 · captions · 30s cutdown', std: '$8,000', partner: '$4,000', was: '$2,500 / $1,250' },
+  { item: 'Voiceover talent', unit: 'low, grounded male read, cast to your brief', std: 'at cost', partner: 'at cost' },
+  { item: 'Social short series', unit: 'three 15–30s verticals, cut from both days', std: '$1,500', partner: '$750' },
+  { item: 'Revised launch package', unit: 'everything above, both days', std: '$9,500', partner: '$4,750', highlight: true, was: '$3,500 / $1,750' },
+];
+
+const included = [
+  { t: 'Script to screen', d: 'Shot list built beat by beat against your timed brief, location scouting, two shoot days, edit, color, sound design (breathing to percussion to full music), licensed music, on-screen labels, captions.' },
+  { t: 'Real screens, real results', d: 'App inserts captured from the actual app with genuine assessment data, per the brief. Nothing mocked up.' },
+  { t: 'Both crops, built on purpose', d: 'Key action framed for 16:9 and 9:16 on set, so the vertical is a real edit, not a center crop of the wide.' },
+  { t: 'Your cast, our direction', d: 'PeakVO₂ provides the four recurring people and a trainer. Accel schedules, directs, and wardrobes them across both days.' },
+  { t: 'Revisions', d: 'One structured revision round on every piece. First cuts within three weeks of day two.' },
+  { t: 'Full usage rights', d: 'Website, YouTube, social, paid campaigns. Same as the original quote.' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Revised hero film quote for PeakVO₂ CORE, priced against the videographer brief." />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <title>PeakVO₂ × Accel Media | The Hero Film, Revised</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="/" class="cobrand">
+        <span class="cobrand-client font-display">PEAKVO<sub>2</sub></span>
+        <span class="cobrand-x">×</span>
+        <img src={accelLogo} alt="Accel Media" class="cobrand-logo" />
+      </a>
+      <a href="/" class="backlink">← Back to the proposal</a>
+    </header>
+
+    <main>
+      <section class="hero-lite">
+        <div class="wrap">
+          <p class="aw-eyebrow">Revised quote · September 2026</p>
+          <h1 class="lite-title">The hero film,<br /><span class="hero-dim">built to your brief.</span></h1>
+          <p class="band-body lead">
+            Your brief is not a bigger version of the hype reel. It is a scripted 60 second commercial:
+            four recurring people, seven setups, a voiceover, real app data, and a film that starts in the
+            dark and opens into daylight. That takes two days and a different edit. Here is what it costs.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ THE BRIEF, BEAT BY BEAT ============ -->
+      <section class="band tightband">
+        <div class="wrap">
+          <h2 class="band-title">Your brief, beat by beat</h2>
+          <p class="band-body">Straight from the document. This is the shot list we build against.</p>
+          <div class="beats">
+            {beats.map((b) => (
+              <div class="beat">
+                <span class="beat-t font-display">{b.t}<em>sec</em></span>
+                <div class="beat-body">
+                  <p class="beat-v">{b.v}</p>
+                  <p class="beat-a">{b.a}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p class="context-note">
+            Look: Garmin-inspired athletic grit. Voice: low, grounded, deliberate pauses. Sound: breathing sets the
+            rhythm, percussion builds through testing, fuller music opens with daylight. Pause after "CORE" in the last line.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ TWO DAYS ============ -->
+      <section class="band alt">
+        <div class="wrap">
+          <h2 class="band-title">Two production days</h2>
+          <div class="day-grid">
+            {days.map((d) => (
+              <div class="day-card">
+                <span class="day-num font-display">{d.n}</span>
+                <h3 class="day-title">{d.t}</h3>
+                <p class="day-desc">{d.d}</p>
+                <p class="day-spec">{d.spec}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ THE QUOTE ============ -->
+      <section class="band">
+        <div class="wrap">
+          <h2 class="band-title">The revised quote</h2>
+          <p class="band-body">
+            Standard on the left. Partner rate on the right, half, same as everything else in the partnership.
+            The original one-day numbers are shown struck through where they changed.
+          </p>
+          <div class="rate-table" role="table" aria-label="Revised rates">
+            <div class="rate-head" role="row">
+              <span role="columnheader">Deliverable</span>
+              <span role="columnheader">Standard</span>
+              <span role="columnheader" class="partner-col">Partner Rate</span>
+            </div>
+            {rates.map((r) => (
+              <div class:list={['rate-row', { highlight: r.highlight }]} role="row">
+                <span class="rate-item" role="cell">{r.item}<em>{r.unit}</em>{r.was && <s>was {r.was}</s>}</span>
+                <span class="rate-std" role="cell">{r.std}</span>
+                <span class="rate-partner" role="cell">{r.partner}</span>
+              </div>
+            ))}
+          </div>
+          <div class="deposit">
+            <div>
+              <p class="deposit-title font-display">Deposit to lock both dates</p>
+              <p class="deposit-sub">50% of the partner package, balance on delivery of final cuts.</p>
+            </div>
+            <span class="deposit-amt font-display">$2,375</span>
+          </div>
+          <p class="context-note">
+            Voiceover is a pass-through: you approve the read, you pay what the talent charges, no markup.
+            Typical range for a 60 second commercial read is a few hundred dollars.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ INCLUDED ============ -->
+      <section class="band alt">
+        <div class="wrap">
+          <h2 class="band-title">What the number covers</h2>
+          <div class="inc-grid">
+            {included.map((i) => (
+              <div class="inc-card">
+                <h4>{i.t}</h4>
+                <p>{i.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CLOSE ============ -->
+      <section class="band close">
+        <div class="wrap">
+          <h2 class="close-title">Two days. One film that does what the brief asks.</h2>
+          <p class="band-body lead center">Send the deposit and two date options that work for Chris and Jackson, and we're booked.</p>
+          <div class="cta-row">
+            <a href="tel:+12086590834" class="aw-btn-primary">Call (208) 659-0834</a>
+            <a href="mailto:aaron@accelmedia.co?subject=PeakVO2%20hero%20film%20dates" class="aw-btn-secondary">Email Aaron</a>
+          </div>
+          <div class="sign-off">
+            <p class="sign-name font-display">Aaron Bareither</p>
+            <p class="sign-org">Accel Media &nbsp;|&nbsp; (208) 659-0834</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <span class="cobrand-client font-display" style="font-size:0.9rem;">PEAKVO<sub>2</sub></span>
+        <span class="cobrand-x">×</span>
+        <img src={accelLogo} alt="Accel Media" class="cobrand-logo" />
+      </div>
+      <span>Prepared by Accel Media for PeakVO₂ Analytics. Confidential.</span>
+    </footer>
+
+    <style is:global>
+      html { scroll-behavior: smooth; }
+      body { margin: 0; }
+      sub { font-size: 0.6em; line-height: 0; }
+
+      .topbar {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+        display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+        padding: 0.85rem 1.5rem; background: rgba(7, 9, 13, 0.72); backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--aw-border);
+      }
+      .cobrand { display: flex; align-items: center; gap: 0.55rem; }
+      .cobrand-client { font-size: 1rem; letter-spacing: 0.14em; color: var(--aw-accent); }
+      .cobrand-x { color: var(--aw-muted); font-size: 0.8rem; }
+      .cobrand-logo { height: 18px; width: auto; display: block; opacity: 0.92; }
+      .backlink { font-size: 0.85rem; color: var(--aw-muted); font-weight: 500; }
+      .backlink:hover { color: var(--aw-accent-light); }
+
+      main > section { padding: 4rem 1.5rem; }
+      .wrap { max-width: 960px; margin: 0 auto; }
+      .band.alt { background: linear-gradient(180deg, rgba(34,69,201,0.07), rgba(79,164,216,0.02)); }
+      .band.tightband { padding-top: 1rem; }
+      .band-title { font-size: clamp(1.5rem, 3.6vw, 2.2rem); margin: 0.4rem 0 1.2rem; line-height: 1.06; }
+      .band-body { font-size: 1.05rem; line-height: 1.7; color: var(--aw-foreground); opacity: 0.92; margin: 0 0 1.2rem; }
+      .band-body.lead { font-size: 1.12rem; max-width: 720px; }
+      .band-body.center { margin: 0 auto 1.6rem; }
+      .context-note { font-size: 0.92rem; color: var(--aw-muted); line-height: 1.65; margin: 1rem 0 0; }
+
+      .hero-lite {
+        padding-top: 8rem !important; padding-bottom: 1rem !important;
+        background: radial-gradient(1100px 420px at 50% -12%, rgba(34,69,201,0.35), transparent 60%);
+      }
+      .lite-title { font-size: clamp(2rem, 5.4vw, 3.6rem); line-height: 1.02; margin: 1rem 0 1.2rem; letter-spacing: -0.01em; }
+      .hero-dim { color: var(--aw-accent); }
+
+      /* beats */
+      .beats { border: 1px solid var(--aw-border); border-radius: var(--aw-radius-lg); overflow: hidden; background: var(--aw-surface); }
+      .beat { display: grid; grid-template-columns: 96px 1fr; gap: 1rem; padding: 0.95rem 1.3rem; border-top: 1px solid var(--aw-border); align-items: start; }
+      .beat:first-child { border-top: 0; }
+      .beat-t { font-size: 1.15rem; color: var(--aw-accent); line-height: 1.1; display: flex; flex-direction: column; }
+      .beat-t em { font-style: normal; font-family: var(--aw-font-sans); font-weight: 400; font-size: 0.66rem; color: var(--aw-muted); letter-spacing: 0.12em; text-transform: uppercase; }
+      .beat-v { margin: 0 0 0.3rem; font-size: 0.93rem; line-height: 1.55; color: var(--aw-foreground); }
+      .beat-a { margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--aw-accent-light); font-style: italic; }
+      @media (max-width: 560px) { .beat { grid-template-columns: 70px 1fr; padding-left: 1rem; padding-right: 1rem; } }
+
+      /* days */
+      .day-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+      .day-card { background: var(--aw-surface); border: 1px solid var(--aw-border); border-radius: var(--aw-radius-md); padding: 1.8rem 1.7rem 1.5rem; }
+      .day-num { font-size: 0.8rem; letter-spacing: 0.18em; color: var(--aw-accent); opacity: 0.85; }
+      .day-title { font-size: 1.35rem; margin: 0.5rem 0 0.7rem; }
+      .day-desc { font-size: 0.95rem; color: var(--aw-foreground); opacity: 0.9; line-height: 1.62; margin: 0 0 1rem; }
+      .day-spec { font-size: 0.78rem; color: var(--aw-muted); letter-spacing: 0.04em; margin: 0; border-top: 1px solid var(--aw-border); padding-top: 0.85rem; }
+      @media (max-width: 760px) { .day-grid { grid-template-columns: 1fr; } }
+
+      /* rate table */
+      .rate-table { border: 1px solid var(--aw-border); border-radius: var(--aw-radius-lg); overflow: hidden; margin: 1.6rem 0 1.2rem; }
+      .rate-head, .rate-row { display: grid; grid-template-columns: 1fr 140px 140px; align-items: center; }
+      .rate-head { background: var(--aw-surface-light); padding: 0.85rem 1.4rem; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--aw-muted); font-weight: 700; }
+      .rate-head span { text-align: right; }
+      .rate-head span:first-child { text-align: left; }
+      .rate-head .partner-col { color: var(--aw-accent); }
+      .rate-row { padding: 1rem 1.4rem; border-top: 1px solid var(--aw-border); background: var(--aw-surface); }
+      .rate-row.highlight { background: var(--aw-accent-soft); }
+      .rate-item { font-size: 0.97rem; color: var(--aw-foreground); display: flex; flex-direction: column; gap: 0.15rem; }
+      .rate-item em { font-style: normal; font-size: 0.74rem; color: var(--aw-muted); }
+      .rate-item s { font-size: 0.72rem; color: var(--aw-muted); opacity: 0.8; }
+      .rate-std { font-size: 1rem; color: var(--aw-muted); text-align: right; }
+      .rate-partner { font-family: var(--aw-font-display); font-weight: 900; font-size: 1.45rem; color: var(--aw-accent); text-align: right; letter-spacing: 0.02em; }
+      @media (max-width: 640px) {
+        .rate-head, .rate-row { grid-template-columns: 1fr 90px 90px; padding-left: 1rem; padding-right: 1rem; }
+        .rate-partner { font-size: 1.15rem; }
+      }
+
+      /* deposit */
+      .deposit {
+        display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+        padding: 1.4rem 1.8rem; background: linear-gradient(135deg, var(--aw-deep-dark), rgba(34,69,201,0.25));
+        border: 1px solid var(--aw-accent-line); border-radius: var(--aw-radius-lg);
+      }
+      .deposit-title { font-size: 1.1rem; margin: 0 0 0.25rem; color: var(--aw-foreground); }
+      .deposit-sub { font-size: 0.9rem; color: var(--aw-muted); margin: 0; }
+      .deposit-amt { font-size: 2rem; color: var(--aw-accent); white-space: nowrap; }
+      @media (max-width: 560px) { .deposit { flex-direction: column; align-items: flex-start; } }
+
+      /* included */
+      .inc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .inc-card { background: var(--aw-surface); border: 1px solid var(--aw-border); border-top: 2px solid var(--aw-accent); border-radius: var(--aw-radius-md); padding: 1.4rem; }
+      .inc-card h4 { margin: 0 0 0.5rem; font-size: 1rem; }
+      .inc-card p { margin: 0; color: var(--aw-muted); line-height: 1.55; font-size: 0.9rem; }
+      @media (max-width: 860px) { .inc-grid { grid-template-columns: 1fr; } }
+
+      /* close */
+      .band.close { background: radial-gradient(900px 420px at 50% 120%, rgba(34,69,201,0.34), transparent 62%); text-align: center; }
+      .close-title { font-size: clamp(1.5rem, 4vw, 2.5rem); margin: 0.5rem auto 1rem; max-width: 760px; line-height: 1.06; }
+      .cta-row { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
+      .sign-off { margin-top: 3rem; }
+      .sign-name { font-size: 1.4rem; color: var(--aw-foreground); }
+      .sign-org { color: var(--aw-muted); font-size: 0.9rem; margin-top: 0.2rem; }
+
+      .site-footer {
+        display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+        padding: 2rem 1.5rem; border-top: 1px solid var(--aw-border); color: var(--aw-muted); font-size: 0.78rem; max-width: 960px; margin: 0 auto;
+      }
+      .footer-brand { display: flex; align-items: center; gap: 0.5rem; }
+
+      @media (max-width: 560px) {
+        main > section { padding: 3rem 1.2rem; }
+        .topbar { padding: 0.75rem 1.1rem; }
+        .hero-lite { padding-top: 6.5rem !important; }
+      }
+    </style>
+  </body>
+</html>
